@@ -152,46 +152,28 @@ def main():
                 # Add classification report for full model
                 if ml_model_type == "XGBoost":
                     st.subheader("Classification Report - XGBoost Full Model")
-                    report_data = {
-                        'Class': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-                        'Precision': [0.96, 0.90, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 0.97, 1.00, 0.97, 0.89],
-                        'Recall': [0.97, 0.89, 1.00, 1.00, 0.86, 0.83, 1.00, 1.00, 0.97, 1.00, 0.97, 0.92],
-                        'F1-score': [0.97, 0.89, 1.00, 1.00, 0.92, 0.91, 1.00, 1.00, 0.97, 1.00, 0.97, 0.90],
-                        'Support': [1550, 107, 18932, 829, 7, 6, 400, 200, 518, 402, 1622, 51]
+                    metrics_data = {
+                        'Metric': ['Accuracy', 'Precision', 'Recall', 'F1-score'],
+                        'Value': [0.99, 0.97, 0.95, 0.96]
                     }
-                    df_report = pd.DataFrame(report_data)
-                    st.dataframe(df_report, hide_index=True)
-                    st.write("Accuracy: 0.99")
-                    st.write("Macro avg - Precision: 0.97, Recall: 0.95, F1-score: 0.96")
-                    st.write("Weighted avg - Precision: 0.99, Recall: 0.99, F1-score: 0.99")
+                    df_metrics = pd.DataFrame(metrics_data)
+                    st.dataframe(df_metrics, hide_index=True)
                 elif ml_model_type == "Random Forest":
                     st.subheader("Classification Report - Random Forest Full Model")
-                    report_data = {
-                        'Class': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-                        'Precision': [0.93, 0.82, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 0.99, 1.00, 0.96, 0.82],
-                        'Recall': [0.96, 0.99, 1.00, 1.00, 0.86, 0.83, 1.00, 1.00, 0.94, 1.00, 0.93, 1.00],
-                        'F1-score': [0.95, 0.89, 1.00, 1.00, 0.92, 0.91, 1.00, 1.00, 0.96, 1.00, 0.95, 0.90],
-                        'Support': [1550, 107, 18932, 829, 7, 6, 400, 200, 518, 402, 1622, 51]
+                    metrics_data = {
+                        'Metric': ['Accuracy', 'Precision', 'Recall', 'F1-score'],
+                        'Value': [0.99, 0.96, 0.96, 0.96]
                     }
-                    df_report = pd.DataFrame(report_data)
-                    st.dataframe(df_report, hide_index=True)
-                    st.write("Accuracy: 0.99")
-                    st.write("Macro avg - Precision: 0.96, Recall: 0.96, F1-score: 0.96")
-                    st.write("Weighted avg - Precision: 0.99, Recall: 0.99, F1-score: 0.99")
+                    df_metrics = pd.DataFrame(metrics_data)
+                    st.dataframe(df_metrics, hide_index=True)
                 elif ml_model_type == "LightGBM":
                     st.subheader("Classification Report - LightGBM Full Model")
-                    report_data = {
-                        'Class': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-                        'Precision': [0.96, 0.94, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 0.97, 1.00, 0.97, 0.96],
-                        'Recall': [0.97, 0.89, 1.00, 1.00, 0.86, 0.83, 1.00, 1.00, 0.97, 1.00, 0.97, 0.92],
-                        'F1-score': [0.97, 0.91, 1.00, 1.00, 0.92, 0.91, 1.00, 1.00, 0.97, 1.00, 0.97, 0.94],
-                        'Support': [1550, 107, 18932, 829, 7, 6, 400, 200, 518, 402, 1622, 51]
+                    metrics_data = {
+                        'Metric': ['Accuracy', 'Precision', 'Recall', 'F1-score'],
+                        'Value': [1.00, 0.98, 0.95, 0.97]
                     }
-                    df_report = pd.DataFrame(report_data)
-                    st.dataframe(df_report, hide_index=True)
-                    st.write("Accuracy: 1.00")
-                    st.write("Macro avg - Precision: 0.98, Recall: 0.95, F1-score: 0.97")
-                    st.write("Weighted avg - Precision: 1.00, Recall: 1.00, F1-score: 1.00")
+                    df_metrics = pd.DataFrame(metrics_data)
+                    st.dataframe(df_metrics, hide_index=True)
             
             with col2:
                 st.caption("Top 10 Features Model")
@@ -204,46 +186,28 @@ def main():
                 # Add classification report for top10 model
                 if ml_model_type == "XGBoost":
                     st.subheader("Classification Report - XGBoost Top10 Model")
-                    report_data = {
-                        'Class': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-                        'Precision': [0.92, 0.83, 1.00, 1.00, 0.67, 0.71, 1.00, 1.00, 0.98, 1.00, 0.94, 0.72],
-                        'Recall': [0.93, 0.93, 1.00, 1.00, 0.86, 0.83, 1.00, 1.00, 0.95, 1.00, 0.92, 0.90],
-                        'F1-score': [0.92, 0.88, 1.00, 1.00, 0.75, 0.77, 1.00, 1.00, 0.97, 1.00, 0.93, 0.80],
-                        'Support': [1550, 107, 18932, 829, 7, 6, 400, 200, 518, 402, 1622, 51]
+                    metrics_data = {
+                        'Metric': ['Accuracy', 'Precision', 'Recall', 'F1-score'],
+                        'Value': [0.99, 0.90, 0.94, 0.92]
                     }
-                    df_report = pd.DataFrame(report_data)
-                    st.dataframe(df_report, hide_index=True)
-                    st.write("Accuracy: 0.99")
-                    st.write("Macro avg - Precision: 0.90, Recall: 0.94, F1-score: 0.92")
-                    st.write("Weighted avg - Precision: 0.99, Recall: 0.99, F1-score: 0.99")
+                    df_metrics = pd.DataFrame(metrics_data)
+                    st.dataframe(df_metrics, hide_index=True)
                 elif ml_model_type == "Random Forest":
                     st.subheader("Classification Report - Random Forest Top10 Model")
-                    report_data = {
-                        'Class': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-                        'Precision': [0.86, 0.73, 1.00, 1.00, 0.46, 0.04, 0.57, 1.00, 0.93, 0.54, 0.88, 0.46],
-                        'Recall': [0.84, 0.95, 1.00, 1.00, 0.86, 0.33, 0.43, 1.00, 0.87, 0.67, 0.86, 0.84],
-                        'F1-score': [0.85, 0.83, 1.00, 1.00, 0.60, 0.08, 0.49, 1.00, 0.90, 0.60, 0.87, 0.60],
-                        'Support': [1550, 107, 18932, 829, 7, 6, 400, 200, 518, 402, 1622, 51]
+                    metrics_data = {
+                        'Metric': ['Accuracy', 'Precision', 'Recall', 'F1-score'],
+                        'Value': [0.96, 0.71, 0.80, 0.73]
                     }
-                    df_report = pd.DataFrame(report_data)
-                    st.dataframe(df_report, hide_index=True)
-                    st.write("Accuracy: 0.96")
-                    st.write("Macro avg - Precision: 0.71, Recall: 0.80, F1-score: 0.73")
-                    st.write("Weighted avg - Precision: 0.96, Recall: 0.96, F1-score: 0.96")
+                    df_metrics = pd.DataFrame(metrics_data)
+                    st.dataframe(df_metrics, hide_index=True)
                 elif ml_model_type == "LightGBM":
                     st.subheader("Classification Report - LightGBM Top10 Model")
-                    report_data = {
-                        'Class': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-                        'Precision': [0.91, 0.88, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 0.95, 1.00, 0.91, 0.36],
-                        'Recall': [0.91, 0.90, 1.00, 1.00, 0.86, 0.83, 1.00, 1.00, 0.96, 1.00, 0.89, 0.59],
-                        'F1-score': [0.91, 0.89, 1.00, 1.00, 0.92, 0.91, 1.00, 1.00, 0.96, 1.00, 0.90, 0.45],
-                        'Support': [1550, 107, 18932, 829, 7, 6, 400, 200, 518, 402, 1622, 51]
+                    metrics_data = {
+                        'Metric': ['Accuracy', 'Precision', 'Recall', 'F1-score'],
+                        'Value': [0.98, 0.92, 0.91, 0.91]
                     }
-                    df_report = pd.DataFrame(report_data)
-                    st.dataframe(df_report, hide_index=True)
-                    st.write("Accuracy: 0.98")
-                    st.write("Macro avg - Precision: 0.92, Recall: 0.91, F1-score: 0.91")
-                    st.write("Weighted avg - Precision: 0.99, Recall: 0.98, F1-score: 0.98")
+                    df_metrics = pd.DataFrame(metrics_data)
+                    st.dataframe(df_metrics, hide_index=True)
         
         with ml_tab2:
             st.subheader("ROC Curve")
@@ -498,46 +462,28 @@ def main():
             # Add classification report for DL models
             if dl_model_type == "1D-CNN":
                 st.subheader("Classification Report - 1D CNN Full Model")
-                report_data = {
-                    'Class': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-                    'Precision': [0.94, 0.75, 1.00, 1.00, 0.39, 0.42, 1.00, 1.00, 1.00, 1.00, 0.98, 0.90],
-                    'Recall': [0.98, 0.99, 1.00, 1.00, 1.00, 0.83, 1.00, 1.00, 0.94, 1.00, 0.94, 0.90],
-                    'F1-score': [0.96, 0.85, 1.00, 1.00, 0.56, 0.56, 1.00, 1.00, 0.97, 1.00, 0.96, 0.90],
-                    'Support': [1550, 107, 18932, 829, 7, 6, 400, 200, 518, 402, 1622, 51]
+                metrics_data = {
+                    'Metric': ['Accuracy', 'Precision', 'Recall', 'F1-score'],
+                    'Value': [0.99, 0.86, 0.96, 0.90]
                 }
-                df_report = pd.DataFrame(report_data)
-                st.dataframe(df_report, hide_index=True)
-                st.write("Accuracy: 0.99")
-                st.write("Macro avg - Precision: 0.86, Recall: 0.96, F1-score: 0.90")
-                st.write("Weighted avg - Precision: 0.99, Recall: 0.99, F1-score: 0.99")
+                df_metrics = pd.DataFrame(metrics_data)
+                st.dataframe(df_metrics, hide_index=True)
             elif dl_model_type == "MLP":
                 st.subheader("Classification Report - MLP Full Model")
-                report_data = {
-                    'Class': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-                    'Precision': [0.91, 0.72, 1.00, 1.00, 0.15, 0.56, 0.94, 0.99, 1.00, 1.00, 0.86, 1.00],
-                    'Recall': [0.80, 0.99, 1.00, 1.00, 1.00, 0.83, 1.00, 1.00, 0.94, 1.00, 0.93, 0.47],
-                    'F1-score': [0.85, 0.83, 1.00, 1.00, 0.26, 0.67, 0.97, 0.99, 0.97, 1.00, 0.89, 0.64],
-                    'Support': [1550, 107, 18932, 829, 7, 6, 400, 200, 518, 402, 1622, 51]
+                metrics_data = {
+                    'Metric': ['Accuracy', 'Precision', 'Recall', 'F1-score'],
+                    'Value': [0.98, 0.84, 0.91, 0.84]
                 }
-                df_report = pd.DataFrame(report_data)
-                st.dataframe(df_report, hide_index=True)
-                st.write("Accuracy: 0.98")
-                st.write("Macro avg - Precision: 0.84, Recall: 0.91, F1-score: 0.84")
-                st.write("Weighted avg - Precision: 0.98, Recall: 0.98, F1-score: 0.98")
+                df_metrics = pd.DataFrame(metrics_data)
+                st.dataframe(df_metrics, hide_index=True)
             elif dl_model_type == "TabNet-like":
                 st.subheader("Classification Report - TabNet-like Full Model")
-                report_data = {
-                    'Class': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-                    'Precision': [0.96, 0.77, 1.00, 1.00, 0.64, 1.00, 1.00, 1.00, 1.00, 1.00, 0.96, 0.94],
-                    'Recall': [0.95, 0.99, 1.00, 1.00, 1.00, 0.83, 1.00, 1.00, 0.94, 1.00, 0.97, 0.94],
-                    'F1-score': [0.96, 0.87, 1.00, 1.00, 0.78, 0.91, 1.00, 1.00, 0.97, 1.00, 0.96, 0.94],
-                    'Support': [1550, 107, 18932, 829, 7, 6, 400, 200, 518, 402, 1622, 51]
+                metrics_data = {
+                    'Metric': ['Accuracy', 'Precision', 'Recall', 'F1-score'],
+                    'Value': [0.99, 0.94, 0.97, 0.95]
                 }
-                df_report = pd.DataFrame(report_data)
-                st.dataframe(df_report, hide_index=True)
-                st.write("Accuracy: 0.99")
-                st.write("Macro avg - Precision: 0.94, Recall: 0.97, F1-score: 0.95")
-                st.write("Weighted avg - Precision: 0.99, Recall: 0.99, F1-score: 0.99")
+                df_metrics = pd.DataFrame(metrics_data)
+                st.dataframe(df_metrics, hide_index=True)
         
         with dl_tab2:
             st.subheader("ROC Curve")
