@@ -1,0 +1,10 @@
+fwd_pkts_payload.min
+fwd_pkts_payload.avg
+service
+payload_bytes_per_second
+bwd_pkts_per_sec
+fwd_pkts_payload.max
+flow_pkts_per_sec
+flow_SYN_flag_count
+flow_pkts_payload.avg
+fwd_pkts_per_sec

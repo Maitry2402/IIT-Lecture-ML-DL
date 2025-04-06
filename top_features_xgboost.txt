@@ -1,0 +1,10 @@
+fwd_pkts_payload.max
+fwd_pkts_payload.min
+fwd_header_size_min
+flow_FIN_flag_count
+service
+fwd_URG_flag_count
+fwd_pkts_per_sec
+flow_pkts_payload.std
+bwd_pkts_payload.avg
+proto
